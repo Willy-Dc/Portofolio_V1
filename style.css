@@ -1,0 +1,4356 @@
+/* ===================================
+   GOOGLE FONT
+=================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===================================
+   RESET
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    overflow-x:hidden;
+    color:white;
+
+    background:
+    radial-gradient(
+    ellipse at center,
+    #111111 0%,
+    #050505 50%,
+    #000000 100%
+    );
+
+    min-height:100vh;
+}
+
+
+/* ===================================
+   CUSTOM SCROLLBAR
+=================================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#020617;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#00bfff;
+    border-radius:20px;
+}
+
+/* ===================================
+   PARTICLES CANVAS
+=================================== */
+
+#particles{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    z-index:-2;
+}
+
+/* ===================================
+   BACKGROUND GLOW
+=================================== */
+
+body::before{
+    content:'';
+    position:fixed;
+    top:-200px;
+    left:-200px;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle,
+    rgba(0,191,255,.4),
+    transparent 70%);
+
+    filter:blur(120px);
+
+    z-index:-1;
+}
+
+body::after{
+    content:'';
+    position:fixed;
+    bottom:-200px;
+    right:-200px;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle,
+    rgba(0,255,255,.25),
+    transparent 70%);
+
+    filter:blur(120px);
+
+    z-index:-1;
+}
+/* ===================================
+   LOADING SCREEN PREMIUM (V2 NEON CLEAN)
+=================================== */
+/* ===================================
+   LOADING SCREEN PREMIUM (V2 NEON CLEAN)
+=================================== */
+#loader {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 50% 35%, rgba(124, 58, 237, 0.18), transparent 55%),
+        #0a0118;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.space-scene {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 600px;
+    padding: 0 20px;
+}
+
+/* --- LOADER ICONS (Code / User / GitHub) --- */
+.loader-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.loader-icon-circle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(139, 92, 246, 0.08);
+    border: 1px solid rgba(139, 92, 246, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: #e9e4ff;
+    box-shadow:
+        0 0 20px rgba(139, 92, 246, 0.45),
+        0 0 45px rgba(139, 92, 246, 0.25),
+        inset 0 0 12px rgba(139, 92, 246, 0.15);
+    animation: iconPulseGlow 2.4s ease-in-out infinite;
+}
+
+.loader-icon-circle:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.loader-icon-circle:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes iconPulseGlow {
+    0%, 100% {
+        box-shadow:
+            0 0 20px rgba(139, 92, 246, 0.45),
+            0 0 45px rgba(139, 92, 246, 0.25),
+            inset 0 0 12px rgba(139, 92, 246, 0.15);
+        transform: translateY(0);
+    }
+    50% {
+        box-shadow:
+            0 0 30px rgba(139, 92, 246, 0.7),
+            0 0 65px rgba(139, 92, 246, 0.4),
+            inset 0 0 16px rgba(139, 92, 246, 0.25);
+        transform: translateY(-4px);
+    }
+}
+
+/* --- WELCOME TEXT --- */
+.loader-welcome {
+    text-align: center;
+}
+
+.loader-welcome h1 {
+    font-size: clamp(2.2rem, 6vw, 3.6rem);
+    font-weight: 800;
+    line-height: 1.15;
+    color: #f1eefc;
+    margin: 0;
+    animation: fadeUpIn 0.9s ease both;
+}
+
+.loader-welcome-gradient {
+    background: linear-gradient(90deg, #6d5bf2, #9b4dff, #7c3aed);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation-delay: 0.15s;
+}
+
+@keyframes fadeUpIn {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- LOADING STATUS TEXT & BAR --- */
+.loading-status {
+    text-align: center;
+    width: 100%;
+}
+
+#load-percentage {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #9b4dff;
+    font-family: monospace;
+    text-shadow: 0 0 15px rgba(16, 19, 89, 0.6);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.progress-bar-bg {
+    width: 100%;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border: 1px solid rgba(155, 77, 255, 0.15);
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #6d5bf2, #9b4dff);
+    width: 0%;
+    box-shadow: 0 0 12px #9b4dff;
+    border-radius: 10px;
+}
+
+.loading-status h2 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #64748b;
+}
+/* GLASSMORPHISM CARD DESIGN */
+.project-card, .certificate-card {
+    background: rgba(255, 255, 255, 0.02) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.project-card:hover, .certificate-card:hover {
+    border-color: rgba(0, 191, 255, 0.4);
+    box-shadow: 0 0 30px rgba(0, 191, 255, 0.2);
+}
+
+/* ===================================
+   NAVBAR
+=================================== */
+
+#navbar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    padding:20px 8%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    backdrop-filter:blur(15px);
+
+    background:rgba(2,6,23,.5);
+
+    border-bottom:
+    1px solid rgba(255,255,255,.08);
+
+    z-index:1000;
+}
+
+.logo{
+
+    font-size:2rem;
+    font-weight:700;
+}
+
+.logo span{
+    color:#00bfff;
+}
+
+.nav-links{
+
+    display:flex;
+    gap:35px;
+
+    list-style:none;
+}
+
+.nav-links a{
+
+    text-decoration:none;
+
+    color:white;
+
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#00bfff;
+}
+
+.menu-btn{
+    display:none;
+}
+
+/* ===================================
+   HERO SECTION
+=================================== */
+
+#home{
+
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+
+    padding:120px 8% 50px;
+}
+
+.hero-container{
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:
+    1fr
+    1fr;
+
+    gap:40px;
+
+    align-items:center;
+}
+
+/* ===================================
+   HERO LEFT
+=================================== */
+
+.hero-tag{
+
+    color:#00bfff;
+
+    letter-spacing:4px;
+
+    font-size:.9rem;
+}
+
+.hero-left h1{
+
+    margin-top:15px;
+
+    font-size:5rem;
+
+    line-height:1.1;
+}
+
+.hero-left p{
+
+    margin-top:25px;
+
+    color:#cbd5e1;
+
+    line-height:1.8;
+}
+
+.typing-container{
+
+    margin-top:20px;
+
+    font-size:1.4rem;
+
+    color:#00bfff;
+
+    min-height:40px;
+
+    font-weight:600;
+}
+
+/* ===================================
+   BUTTONS
+=================================== */
+
+.hero-buttons{
+
+    margin-top:30px;
+
+    display:flex;
+    gap:20px;
+}
+
+.btn-primary{
+
+    padding:14px 30px;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    background:#00bfff;
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.4s;
+}
+
+.btn-primary:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 0 20px #00bfff,
+    0 0 50px #00bfff;
+}
+
+.btn-secondary{
+
+    padding:14px 30px;
+
+    border-radius:40px;
+
+    text-decoration:none;
+
+    border:2px solid #00bfff;
+
+    color:#00bfff;
+
+    transition:.4s;
+}
+
+.btn-secondary:hover{
+
+    background:#00bfff;
+
+    color:white;
+}
+
+/* ===================================
+   HERO IMAGE
+=================================== */
+
+.hero-center{
+
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+}
+
+.image-glow{
+
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle,
+    rgba(0,191,255,.5),
+    transparent 70%);
+
+    filter:blur(50px);
+
+    animation:pulse 4s infinite;
+}
+
+.hero-image{
+
+    width:420px;
+
+    position:relative;
+
+    z-index:10;
+
+    filter:
+    drop-shadow(0 0 20px #00bfff)
+    drop-shadow(0 0 60px #00bfff);
+
+    transition:.4s;
+}
+
+.hero-image{
+
+    mix-blend-mode:screen;
+
+    filter:
+    drop-shadow(0 0 30px #00bfff)
+    drop-shadow(0 0 80px #00bfff);
+
+}
+
+.hero-image{
+
+    filter:
+    drop-shadow(0 0 20px rgba(255,255,255,.15));
+
+    mix-blend-mode:lighten;
+}
+
+.hero-image:hover{
+    transform:scale(1.03);
+}
+
+@keyframes pulse{
+
+    50%{
+        transform:scale(1.1);
+    }
+
+}
+
+/* ===================================
+   GLASS CARD
+=================================== */
+
+.glass-card{
+
+    background:
+    rgba(255,255,255,.05);
+
+    backdrop-filter:blur(15px);
+
+    border:
+    1px solid rgba(255,255,255,.1);
+
+    border-radius:25px;
+
+    padding:30px;
+}
+
+/* ===================================
+   SECTION TITLE
+=================================== */
+
+.section-title{
+
+    text-align:center;
+
+    margin-bottom:60px;
+}
+
+.section-title h2{
+
+    font-size:3rem;
+
+    color:#00bfff;
+}
+
+.section-title p{
+
+    color:#94a3b8;
+}
+
+/* ===================================
+   SECTIONS
+=================================== */
+
+section{
+    padding:100px 8%;
+}
+
+/* ===================================
+   ABOUT SECTION
+=================================== */
+
+/* ============================================
+   ABOUT SECTION — REDESIGN
+   Tempel di paling bawah style.css
+   (hapus atau comment blok .about-wrapper
+    dan .about-card yang lama)
+   ============================================ */
+
+/* ---- Layout utama ---- */
+.about-layout {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* =====================
+   KOLOM KIRI — Foto
+   ===================== */
+
+.about-photo-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+/* Frame foto */
+.about-photo-frame {
+    position: relative;
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.about-photo-glow {
+    position: absolute;
+    inset: -20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,191,255,0.35) 0%, transparent 70%);
+    filter: blur(30px);
+    animation: aboutGlow 4s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+@keyframes aboutGlow {
+    from { opacity: 0.5; transform: scale(0.95); }
+    to   { opacity: 1;   transform: scale(1.05); }
+}
+
+.about-photo {
+    width: 300px;
+    height: 360px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 24px;
+    position: relative;
+    z-index: 1;
+    border: 2px solid rgba(0,191,255,0.25);
+    box-shadow:
+        0 0 0 6px rgba(0,191,255,0.06),
+        0 20px 60px rgba(0,0,0,0.5);
+    mix-blend-mode: lighten;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.08));
+}
+
+/* Badge melayang */
+.about-badge {
+    position: absolute;
+    z-index: 2;
+    background: rgba(2,6,23,0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0,191,255,0.2);
+    border-radius: 30px;
+    padding: 7px 16px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.78rem;
+    color: #e2e8f0;
+    white-space: nowrap;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.badge-top {
+    top: 18px;
+    right: -20px;
+    animation: badgeFloat 3s ease-in-out infinite;
+}
+
+.badge-top i { color: #fbbf24; }
+
+.badge-bottom {
+    bottom: 18px;
+    left: -20px;
+    animation: badgeFloat 3.5s ease-in-out infinite reverse;
+}
+
+.badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 8px #4ade80;
+    animation: statusPulse 2s infinite;
+    flex-shrink: 0;
+}
+
+@keyframes badgeFloat {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-7px); }
+}
+
+/* Stats row */
+.about-stats {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 16px 24px;
+    width: 100%;
+}
+
+.astat {
+    flex: 1;
+    text-align: center;
+}
+
+.astat strong {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #00bfff;
+    line-height: 1;
+}
+
+.astat span {
+    font-size: 0.72rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.astat-divider {
+    width: 1px;
+    height: 36px;
+    background: rgba(255,255,255,0.08);
+}
+
+/* =====================
+   KOLOM KANAN — Info
+   ===================== */
+
+.about-info-col {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+/* Bio */
+.about-bio {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.about-eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #00bfff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.about-bio h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1.2;
+}
+
+.about-bio h3 span {
+    color: #00bfff;
+}
+
+.about-bio p {
+    color: #94a3b8;
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.about-bio p strong {
+    color: #e2e8f0;
+}
+
+/* Info pills */
+.about-info-pills {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.info-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.info-pill i {
+    color: #00bfff;
+    width: 16px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* =====================
+   SKILL ICONS GRID
+   ===================== */
+
+.about-skills-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.skills-heading {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #00bfff;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0,191,255,0.15);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.skill-icons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+/* Satu kartu skill */
+.skill-icon-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+    padding: 16px 12px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: default;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-icon-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.skill-icon-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0,191,255,0.3);
+    box-shadow: 0 0 20px rgba(0,191,255,0.12);
+    background: rgba(0,191,255,0.05);
+}
+
+/* Ikon bulat */
+.sic-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+}
+
+/* Warna per bahasa */
+.html-color  { background: rgba(228,77,38,0.15);  color: #e44d26; }
+.css-color   { background: rgba(33,114,186,0.15); color: #2196f3; }
+.js-color    { background: rgba(247,223,30,0.15); color: #f7df1e; }
+.tw-color    { background: rgba(6,182,212,0.15);  color: #06b6d4; }
+.bs-color    { background: rgba(121,82,179,0.15); color: #7952b3; }
+.figma-color { background: rgba(242,78,30,0.12);  color: #f24e1e; }
+.python-color   { background: rgba(240,80,50,0.15);  color: #f05032; }
+.gh-color    { background: rgba(255,255,255,0.08);color: #e2e8f0; }
+
+.tw-text {
+    font-size: 0.95rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+/* Label */
+.skill-icon-card > span {
+    font-size: 0.75rem;
+    color: #cbd5e1;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Mini progress bar */
+.sic-bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.sic-fill {
+    height: 100%;
+    width: 0;                          /* start 0, JS animate ke --w */
+    border-radius: 10px;
+    background: linear-gradient(90deg, #00bfff, #00ffff);
+    box-shadow: 0 0 8px #00bfff;
+    transition: width 1.2s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+/* Persentase kecil */
+.skill-icon-card > small {
+    font-size: 0.68rem;
+    color: #475569;
+}
+
+/* =====================
+   TECH SKILLS — FULL WIDTH BELOW NAMETAG
+   ===================== */
+
+.about-skills-fullwidth {
+    margin-top: 40px;
+    width: 100%;
+}
+
+.about-skills-fullwidth .skill-icons-grid {
+    grid-template-columns: repeat(6, 1fr);
+}
+
+/* Hide bar & percentage globally (clean logo-only mode) */
+.sic-bar,
+.skill-icon-card > small {
+    display: none;
+}
+
+/* =====================
+   RESPONSIVE
+   ===================== */
+
+@media (max-width: 1100px) {
+    .about-layout {
+        grid-template-columns: 320px 1fr;
+        gap: 40px;
+    }
+    .skill-icons-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 850px) {
+    .about-layout {
+        grid-template-columns: 1fr;
+    }
+    .about-photo-col {
+        align-items: center;
+    }
+    .about-photo-frame {
+        width: 260px;
+    }
+    .about-photo {
+        width: 260px;
+        height: 310px;
+    }
+    .about-stats {
+        width: 100%;
+        max-width: 320px;
+    }
+    .skill-icons-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .skill-icons-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .about-bio h3 {
+        font-size: 1.6rem;
+    }
+}
+
+/* ===================================
+   SKILL BAR
+=================================== */
+
+.skill{
+
+    margin-bottom:20px;
+}
+
+.skill span{
+
+    display:block;
+
+    margin-bottom:8px;
+}
+
+.progress{
+
+    width:100%;
+
+    height:12px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    border-radius:50px;
+
+    overflow:hidden;
+}
+
+.progress div{
+
+    height:100%;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(
+    90deg,
+    #00bfff,
+    #00ffff);
+
+    box-shadow:
+    0 0 15px #00bfff;
+}
+
+/* ===================================
+   PROJECTS
+=================================== */
+
+.project-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:30px;
+}
+
+.project-card{
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+    background:
+    rgba(255,255,255,.05);
+
+    backdrop-filter:blur(15px);
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    transition:.4s;
+}
+
+.project-card:hover{
+
+    transform:
+    translateY(-10px);
+
+    box-shadow:
+    0 0 30px rgba(0,191,255,.3);
+}
+
+.project-card img{
+
+    width:100%;
+
+    height:250px;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+.project-content{
+
+    padding:25px;
+}
+
+.project-content h3{
+
+    color:#00bfff;
+
+    margin-bottom:15px;
+}
+
+.project-content p{
+
+    color:#cbd5e1;
+
+    line-height:1.7;
+
+    margin-bottom:20px;
+}
+
+.project-content a{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:12px 24px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+    90deg,
+    #00bfff,
+    #0099ff);
+
+    transition:.3s;
+}
+
+.project-content a:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 0 20px #00bfff;
+}
+
+/* ===================================
+   TILT EFFECT CARD
+=================================== */
+
+.tilt-card{
+
+    transform-style:
+    preserve-3d;
+
+    transition:
+    transform .15s ease;
+}
+
+/* ===================================
+   CERTIFICATES
+=================================== */
+
+.certificate-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+}
+
+.certificate-card{
+
+    height:180px;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    cursor:pointer;
+}
+
+.certificate-card img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.4s;
+}
+
+.certificate-card:hover img{
+
+    transform:scale(1.08);
+}
+
+.certificate-card:hover{
+
+    box-shadow:
+    0 0 30px rgba(0,191,255,.4);
+}
+
+/* ===================================
+   CONTACT
+=================================== */
+
+.contact-icons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+}
+
+.contact-icons a{
+
+    width:80px;
+    height:80px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    font-size:2rem;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:
+    rgba(255,255,255,.05);
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    transition:.4s;
+}
+
+.contact-icons a:hover{
+
+    transform:
+    translateY(-10px);
+
+    background:
+    #00bfff;
+
+    box-shadow:
+    0 0 25px #00bfff,
+    0 0 50px #00bfff;
+}
+
+/* ===================================
+   FOOTER
+=================================== */
+
+footer{
+
+    text-align:center;
+
+    padding:40px;
+
+    border-top:
+    1px solid rgba(255,255,255,.08);
+}
+
+footer h3{
+
+    color:#00bfff;
+
+    margin-bottom:10px;
+}
+
+footer p{
+
+    color:#94a3b8;
+}
+
+/* ===================================
+   SCROLL REVEAL
+=================================== */
+
+/* .reveal — dihandle oleh scroll-anim.js, CSS ini hanya fallback */
+.reveal {
+    /* initial state di-set via JS, ini hanya safety */
+    will-change: opacity, transform;
+}
+.reveal.anim-visible {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* prefers-reduced-motion: langsung tampil semua tanpa animasi */
+@media (prefers-reduced-motion: reduce) {
+    .reveal, .project-card, .certificate-card, .skill-icon-card {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+/* ===================================
+   FLOATING ANIMATION
+=================================== */
+
+.float{
+
+    animation:
+    floating 4s ease-in-out infinite;
+}
+
+@keyframes floating{
+
+    0%,100%{
+        transform:
+        translateY(0px);
+    }
+
+    50%{
+        transform:
+        translateY(-15px);
+    }
+
+}
+
+/* ===================================
+   NEON BORDER
+=================================== */
+
+.neon-border{
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.neon-border::before{
+
+    content:'';
+
+    position:absolute;
+
+    inset:-2px;
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    #00bfff,
+    transparent);
+
+    animation:
+    neonMove 3s linear infinite;
+}
+
+@keyframes neonMove{
+
+    0%{
+        transform:
+        translateX(-100%);
+    }
+
+    100%{
+        transform:
+        translateX(100%);
+    }
+
+}
+
+/* ===================================
+   HERO IMAGE HOVER GLOW
+=================================== */
+
+.hero-center:hover .image-glow{
+
+    filter:
+    blur(70px);
+
+    transform:
+    scale(1.15);
+}
+
+/* ===================================
+   HERO IMAGE TILT SMOOTH
+=================================== */
+
+.hero-image{
+
+    transform-style:
+    preserve-3d;
+
+    will-change:
+    transform;
+}
+
+/* ===================================
+   PROJECT CARD SHINE
+=================================== */
+
+.project-card{
+
+    position:relative;
+}
+
+.project-card::before{
+
+    content:'';
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:80px;
+    height:100%;
+
+    background:
+    rgba(255,255,255,.15);
+
+    transform:
+    skewX(-25deg);
+
+    transition:.8s;
+}
+
+.project-card:hover::before{
+
+    left:130%;
+}
+
+/* ===================================
+   CONTACT ICON ROTATE
+=================================== */
+
+.contact-icons a i{
+
+    transition:.4s;
+}
+
+.contact-icons a:hover i{
+
+    transform:
+    rotate(360deg);
+}
+
+/* ===================================
+   SECTION SPACING MOBILE
+=================================== */
+
+@media(max-width:1200px){
+
+    .hero-left h1{
+
+        font-size:4rem;
+    }
+
+    .hero-image{
+
+        width:350px;
+    }
+
+}
+
+/* ===================================
+   TABLET
+=================================== */
+
+@media(max-width:992px){
+
+    .hero-container{
+
+        grid-template-columns:
+        1fr;
+
+        text-align:center;
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+    }
+
+    .hero-center{
+
+        order:-1;
+    }
+
+    .about-wrapper{
+
+        grid-template-columns:
+        1fr;
+    }
+
+    .project-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .certificate-grid{
+
+        grid-template-columns:
+        1fr;
+    }
+
+}
+
+/* ===================================
+   MOBILE NAVBAR
+=================================== */
+
+@media(max-width:768px){
+
+    .menu-btn{
+
+        display:block;
+
+        font-size:1.6rem;
+
+        cursor:pointer;
+    }
+
+    .nav-links{
+
+        position:absolute;
+
+        top:100%;
+
+        left:0;
+
+        width:100%;
+
+        background:
+        rgba(2,6,23,.95);
+
+        flex-direction:column;
+
+        text-align:center;
+
+        padding:20px 0;
+
+        display:none;
+    }
+
+    .nav-links.active{
+
+        display:flex;
+    }
+
+}
+
+/* ===================================
+   MOBILE HERO
+=================================== */
+
+@media(max-width:768px){
+
+    .hero-left h1{
+
+        font-size:3rem;
+    }
+
+    .hero-image{
+
+        width:280px;
+    }
+
+    .image-glow{
+
+        width:280px;
+        height:280px;
+    }
+
+    .typing-container{
+
+        font-size:1.1rem;
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+    }
+
+}
+
+/* ===================================
+   MOBILE PROJECTS
+=================================== */
+
+@media(max-width:768px){
+
+    .project-grid{
+
+        grid-template-columns:
+        1fr;
+    }
+
+}
+
+/* ===================================
+   MOBILE CONTACT
+=================================== */
+
+@media(max-width:768px){
+
+    .contact-icons{
+
+        gap:15px;
+    }
+
+    .contact-icons a{
+
+        width:65px;
+        height:65px;
+
+        font-size:1.5rem;
+    }
+
+}
+
+/* ===================================
+   SMALL MOBILE
+=================================== */
+
+@media(max-width:480px){
+
+    .hero-left h1{
+
+        font-size:2.4rem;
+    }
+
+    .section-title h2{
+
+        font-size:2rem;
+    }
+
+    .glass-card{
+
+        padding:20px;
+    }
+
+}
+
+/* ===================================
+   GLASS HOVER
+=================================== */
+
+.glass-card:hover{
+
+    transform:
+    translateY(-8px);
+
+    box-shadow:
+    0 0 25px rgba(0,191,255,.2);
+}
+
+/* ===================================
+   SMOOTH TRANSITIONS
+=================================== */
+
+a,
+button,
+.card,
+.project-card,
+.glass-card,
+.hero-image{
+
+    transition:
+    all .35s ease;
+}
+
+/* ===================================
+   TYPING CURSOR
+=================================== */
+
+.typing-cursor{
+
+    color:#00bfff;
+
+    font-weight:bold;
+
+    font-size:1.4rem;
+
+    margin-left:4px;
+}
+
+/* ===================================
+   PLANET
+=================================== */
+
+.planet{
+
+    position:fixed;
+
+    right:-150px;
+    top:100px;
+
+    width:500px;
+    height:500px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+    circle,
+    #60a5fa,
+    #1e40af,
+    transparent 70%
+    );
+
+    opacity:.35;
+
+    filter:
+    blur(30px);
+
+    z-index:-3;
+
+    animation:
+    planetFloat 8s ease-in-out infinite;
+}
+
+@keyframes planetFloat{
+
+    50%{
+
+        transform:
+        translateY(-30px);
+    }
+
+}
+
+
+/* ===================================
+   COSMIC GLOW
+=================================== */
+
+body::before{
+
+    content:'';
+
+    position:fixed;
+
+    top:-250px;
+    left:-250px;
+
+    width:700px;
+    height:700px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+    rgba(0,191,255,.25),
+    transparent 70%
+    );
+
+    filter:
+    blur(150px);
+
+    z-index:-2;
+}
+
+body::after{
+
+    content:'';
+
+    position:fixed;
+
+    bottom:-250px;
+    right:-250px;
+
+    width:700px;
+    height:700px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+    rgba(168,85,247,.2),
+    transparent 70%
+    );
+
+    filter:
+    blur(150px);
+
+    z-index:-2;
+}
+
+/* ===================================
+   PLANETS
+=================================== */
+
+.planet{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    z-index:-3;
+}
+
+.planet1{
+
+    width:400px;
+    height:400px;
+
+    right:-100px;
+    top:80px;
+
+    background:
+    radial-gradient(
+    circle at 30% 30%,
+    #666,
+    #222,
+    #000
+    );
+
+    box-shadow:
+    inset -40px -40px 80px rgba(0,0,0,.8);
+
+    animation:
+    planetMove1 18s ease-in-out infinite;
+}
+
+.planet2{
+
+    width:180px;
+    height:180px;
+
+    left:5%;
+    bottom:10%;
+
+    background:
+    radial-gradient(
+    circle at 30% 30%,
+    #999,
+    #333,
+    #111
+    );
+
+    animation:
+    planetMove2 12s ease-in-out infinite;
+}
+
+@keyframes planetMove1{
+
+    0%,100%{
+        transform:
+        translateY(0px)
+        rotate(0deg);
+    }
+
+    50%{
+        transform:
+        translateY(-30px)
+        rotate(8deg);
+    }
+
+}
+
+@keyframes planetMove2{
+
+    0%,100%{
+        transform:
+        translateY(0px);
+    }
+
+    50%{
+        transform:
+        translateY(20px);
+    }
+
+}
+
+#stars{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-4;
+
+    background:
+    transparent;
+
+}
+
+#stars::before{
+
+    content:'';
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+    radial-gradient(white 1px, transparent 1px);
+
+    background-size:
+    80px 80px;
+
+    animation:
+    twinkle 5s infinite alternate;
+}
+
+@keyframes twinkle{
+
+    from{
+        opacity:.4;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+/* ==========================
+   CERTIFICATE MODAL
+========================== */
+
+.certificate-modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,.95);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999999;
+}
+
+.certificate-modal.active{
+
+    display:flex;
+}
+
+.certificate-modal img{
+
+    max-width:90%;
+    max-height:90%;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 0 30px rgba(255,255,255,.2);
+}
+
+.close-modal{
+
+    position:absolute;
+
+    top:20px;
+    right:40px;
+
+    font-size:50px;
+
+    color:white;
+
+    cursor:pointer;
+}
+
+/* ==========================
+   CERTIFICATE GRID
+========================== */
+
+.certificate-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:20px;
+}
+
+.certificate-card{
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    cursor:pointer;
+}
+
+.certificate-card img{
+
+    width:100%;
+    height:220px;
+
+    object-fit:cover;
+
+    transition:.4s;
+}
+
+.certificate-card:hover img{
+
+    transform:scale(1.08);
+}
+
+/* ==========================
+   MODAL
+========================== */
+
+.certificate-modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,.95);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999999;
+}
+
+.certificate-modal.active{
+
+    display:flex;
+}
+
+.certificate-modal img{
+
+    max-width:85%;
+    max-height:85%;
+
+    border-radius:15px;
+}
+
+/* CLOSE */
+
+.close-modal{
+
+    position:absolute;
+
+    top:20px;
+    right:40px;
+
+    font-size:50px;
+
+    color:white;
+
+    cursor:pointer;
+}
+
+/* NAVIGATION */
+
+.nav-btn{
+
+    position:absolute;
+
+    background:
+    rgba(255,255,255,.1);
+
+    border:none;
+
+    color:white;
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    font-size:2rem;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.nav-btn:hover{
+
+    background:#00bfff;
+}
+
+.prev-btn{
+
+    left:30px;
+}
+
+.next-btn{
+
+    right:30px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .certificate-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+}
+
+/* ===================================
+   ABOUT SECTION
+=================================== */
+
+.about-wrapper{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:30px;
+}
+
+.about-card{
+
+    transition:.4s;
+}
+
+.about-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 0 20px rgba(0,191,255,.2);
+}
+
+.about-card h3{
+
+    color:#00bfff;
+
+    margin-bottom:20px;
+}
+
+.about-card p{
+
+    color:#cbd5e1;
+
+    line-height:1.8;
+
+    margin-bottom:15px;
+}
+
+/* ===================================
+   SKILL BAR
+=================================== */
+
+.skill{
+
+    margin-bottom:20px;
+}
+
+.skill span{
+
+    display:block;
+
+    margin-bottom:8px;
+}
+
+.progress{
+
+    width:100%;
+
+    height:12px;
+
+    background:
+    rgba(255,255,255,.08);
+
+    border-radius:50px;
+
+    overflow:hidden;
+}
+
+.progress div{
+
+    height:100%;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(
+    90deg,
+    #00bfff,
+    #00ffff);
+
+    box-shadow:
+    0 0 15px #00bfff;
+}
+
+/* ===================================
+   PROJECTS
+=================================== */
+
+.project-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:30px;
+}
+
+.project-card{
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+    background:
+    rgba(255,255,255,.05);
+
+    backdrop-filter:blur(15px);
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    transition:.4s;
+}
+
+.project-card:hover{
+
+    transform:
+    translateY(-10px);
+
+    box-shadow:
+    0 0 30px rgba(0,191,255,.3);
+}
+
+.project-card img{
+
+    width:100%;
+
+    height:250px;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+.project-content{
+
+    padding:25px;
+}
+
+.project-content h3{
+
+    color:#00bfff;
+
+    margin-bottom:15px;
+}
+
+.project-content p{
+
+    color:#cbd5e1;
+
+    line-height:1.7;
+
+    margin-bottom:20px;
+}
+
+.project-content a{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:12px 24px;
+
+    border-radius:30px;
+
+    background:
+    linear-gradient(
+    90deg,
+    #00bfff,
+    #0099ff);
+
+    transition:.3s;
+}
+
+.project-content a:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 0 20px #00bfff;
+}
+
+/* ===================================
+   TILT EFFECT CARD
+=================================== */
+
+.tilt-card{
+
+    transform-style:
+    preserve-3d;
+
+    transition:
+    transform .15s ease;
+}
+
+/* ===================================
+   CERTIFICATES
+=================================== */
+
+.certificate-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:30px;
+}
+
+.certificate-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+.certificate-card img{
+
+    width:100%;
+
+    display:block;
+
+    transition:.5s;
+}
+
+.certificate-card:hover img{
+
+    transform:scale(1.08);
+}
+
+.certificate-card:hover{
+
+    box-shadow:
+    0 0 30px rgba(0,191,255,.4);
+}
+
+/* ===================================
+   CERTIFICATE OVERLAY
+=================================== */
+
+.certificate-card::before{
+
+    content:'VIEW';
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    background:
+    rgba(0,0,0,.5);
+
+    color:white;
+
+    font-size:1.3rem;
+
+    font-weight:600;
+
+    opacity:0;
+
+    transition:.4s;
+
+    z-index:2;
+}
+
+.certificate-card:hover::before{
+
+    opacity:1;
+}
+
+/* ===================================
+   LIGHTBOX
+=================================== */
+
+.lightbox{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,.95);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+}
+
+.lightbox img{
+
+    max-width:90%;
+
+    max-height:90%;
+}
+
+.lightbox.active{
+
+    display:flex;
+}
+
+/* ===================================
+   CONTACT
+=================================== */
+
+.contact-icons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+}
+
+.contact-icons a{
+
+    width:80px;
+    height:80px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    font-size:2rem;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:
+    rgba(255,255,255,.05);
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    transition:.4s;
+}
+
+.contact-icons a:hover{
+
+    transform:
+    translateY(-10px);
+
+    background:
+    #00bfff;
+
+    box-shadow:
+    0 0 25px #00bfff,
+    0 0 50px #00bfff;
+}
+
+/* ===================================
+   FOOTER
+=================================== */
+
+footer{
+
+    text-align:center;
+
+    padding:40px;
+
+    border-top:
+    1px solid rgba(255,255,255,.08);
+}
+
+footer h3{
+
+    color:#00bfff;
+
+    margin-bottom:10px;
+}
+
+footer p{
+
+    color:#94a3b8;
+}
+
+/* ===================================
+   SCROLL REVEAL
+=================================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:
+    translateY(60px);
+
+    transition:
+    all .8s ease;
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+}
+
+/* ===================================
+   FLOATING ANIMATION
+=================================== */
+
+.float{
+
+    animation:
+    floating 4s ease-in-out infinite;
+}
+
+@keyframes floating{
+
+    0%,100%{
+        transform:
+        translateY(0px);
+    }
+
+    50%{
+        transform:
+        translateY(-15px);
+    }
+
+}
+
+/* ===================================
+   NEON BORDER
+=================================== */
+
+.neon-border{
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.neon-border::before{
+
+    content:'';
+
+    position:absolute;
+
+    inset:-2px;
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    #00bfff,
+    transparent);
+
+    animation:
+    neonMove 3s linear infinite;
+}
+
+@keyframes neonMove{
+
+    0%{
+        transform:
+        translateX(-100%);
+    }
+
+    100%{
+        transform:
+        translateX(100%);
+    }
+
+}
+
+/* ===================================
+   HERO IMAGE HOVER GLOW
+=================================== */
+
+.hero-center:hover .image-glow{
+
+    filter:
+    blur(70px);
+
+    transform:
+    scale(1.15);
+}
+
+/* ===================================
+   HERO IMAGE TILT SMOOTH
+=================================== */
+
+.hero-image{
+
+    transform-style:
+    preserve-3d;
+
+    will-change:
+    transform;
+}
+
+/* ===================================
+   PROJECT CARD SHINE
+=================================== */
+
+.project-card{
+
+    position:relative;
+}
+
+.project-card::before{
+
+    content:'';
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:80px;
+    height:100%;
+
+    background:
+    rgba(255,255,255,.15);
+
+    transform:
+    skewX(-25deg);
+
+    transition:.8s;
+}
+
+.project-card:hover::before{
+
+    left:130%;
+}
+
+/* ===================================
+   CONTACT ICON ROTATE
+=================================== */
+
+.contact-icons a i{
+
+    transition:.4s;
+}
+
+.contact-icons a:hover i{
+
+    transform:
+    rotate(360deg);
+}
+
+/* ===================================
+   SECTION SPACING MOBILE
+=================================== */
+
+@media(max-width:1200px){
+
+    .hero-left h1{
+
+        font-size:4rem;
+    }
+
+    .hero-image{
+
+        width:350px;
+    }
+
+}
+
+/* ===================================
+   TABLET
+=================================== */
+
+@media(max-width:992px){
+
+    .hero-container{
+
+        grid-template-columns:
+        1fr;
+
+        text-align:center;
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+    }
+
+    .hero-center{
+
+        order:-1;
+    }
+
+    .about-wrapper{
+
+        grid-template-columns:
+        1fr;
+    }
+
+    .project-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .certificate-grid{
+
+        grid-template-columns:
+        1fr;
+    }
+
+}
+
+/* ===================================
+   MOBILE NAVBAR
+=================================== */
+
+@media(max-width:768px){
+
+    .menu-btn{
+
+        display:block;
+
+        font-size:1.6rem;
+
+        cursor:pointer;
+    }
+
+    .nav-links{
+
+        position:absolute;
+
+        top:100%;
+
+        left:0;
+
+        width:100%;
+
+        background:
+        rgba(2,6,23,.95);
+
+        flex-direction:column;
+
+        text-align:center;
+
+        padding:20px 0;
+
+        display:none;
+    }
+
+    .nav-links.active{
+
+        display:flex;
+    }
+
+}
+
+/* ===================================
+   MOBILE HERO
+=================================== */
+
+@media(max-width:768px){
+
+    .hero-left h1{
+
+        font-size:3rem;
+    }
+
+    .hero-image{
+
+        width:280px;
+    }
+
+    .image-glow{
+
+        width:280px;
+        height:280px;
+    }
+
+    .typing-container{
+
+        font-size:1.1rem;
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+    }
+
+}
+
+/* ===================================
+   MOBILE PROJECTS
+=================================== */
+
+@media(max-width:768px){
+
+    .project-grid{
+
+        grid-template-columns:
+        1fr;
+    }
+
+}
+
+/* ===================================
+   MOBILE CONTACT
+=================================== */
+
+@media(max-width:768px){
+
+    .contact-icons{
+
+        gap:15px;
+    }
+
+    .contact-icons a{
+
+        width:65px;
+        height:65px;
+
+        font-size:1.5rem;
+    }
+
+}
+
+/* ===================================
+   SMALL MOBILE
+=================================== */
+
+@media(max-width:480px){
+
+    .hero-left h1{
+
+        font-size:2.4rem;
+    }
+
+    .section-title h2{
+
+        font-size:2rem;
+    }
+
+    .glass-card{
+
+        padding:20px;
+    }
+
+}
+
+/* ===================================
+   GLASS HOVER
+=================================== */
+
+.glass-card:hover{
+
+    transform:
+    translateY(-8px);
+
+    box-shadow:
+    0 0 25px rgba(0,191,255,.2);
+}
+
+/* ===================================
+   SMOOTH TRANSITIONS
+=================================== */
+
+a,
+button,
+.card,
+.project-card,
+.glass-card,
+.hero-image{
+
+    transition:
+    all .35s ease;
+}
+
+/* ==========================
+   CERTIFICATE GRID
+========================== */
+
+.certificate-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:20px;
+}
+
+.certificate-card{
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    cursor:pointer;
+}
+
+.certificate-card img{
+
+    width:100%;
+    height:220px;
+
+    object-fit:cover;
+
+    transition:.4s;
+}
+
+.certificate-card:hover img{
+
+    transform:scale(1.08);
+}
+
+/* ==========================
+   MODAL
+========================== */
+
+.certificate-modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    rgba(0,0,0,.95);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999999;
+}
+
+.certificate-modal.active{
+
+    display:flex;
+}
+
+.certificate-modal img{
+
+    max-width:85%;
+    max-height:85%;
+
+    border-radius:15px;
+}
+
+/* CLOSE */
+
+.close-modal{
+
+    position:absolute;
+
+    top:20px;
+    right:40px;
+
+    font-size:50px;
+
+    color:white;
+
+    cursor:pointer;
+}
+
+/* NAVIGATION */
+
+.nav-btn{
+
+    position:absolute;
+
+    background:
+    rgba(255,255,255,.1);
+
+    border:none;
+
+    color:white;
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    font-size:2rem;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.nav-btn:hover{
+
+    background:#00bfff;
+}
+
+.prev-btn{
+
+    left:30px;
+}
+
+.next-btn{
+
+    right:30px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .certificate-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+}
+
+.navbar-scroll{
+    background:rgba(0,0,0,.9)!important;
+    box-shadow:0 5px 25px rgba(0,0,0,.3);
+}
+
+.active{
+    opacity:1 !important;
+    transform:translateY(0)!important;
+}
+
+
+
+.typing-cursor{
+    color:#00bfff;
+    margin-left:3px;
+}
+
+/* PLANETS */
+
+.planet1{
+    position:fixed;
+    right:-100px;
+    top:100px;
+
+    width:400px;
+    height:400px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+    circle,
+    #60a5fa,
+    #1e3a8a,
+    transparent
+    );
+
+    opacity:.25;
+
+    filter:blur(20px);
+
+    z-index:-3;
+}
+
+.planet2{
+    position:fixed;
+
+    left:-80px;
+    bottom:50px;
+
+    width:250px;
+    height:250px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+    circle,
+    #a855f7,
+    #581c87,
+    transparent
+    );
+
+    opacity:.2;
+
+    filter:blur(20px);
+
+    z-index:-3;
+}
+
+/* Menjamin kelancaran transisi scroll di browser */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Supaya saat klik menu, judul section tidak tertutup navbar */
+}
+
+/* Indikator Link Aktif di Navbar */
+.nav-links a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a.nav-active {
+    color: #00bfff !important;
+    font-weight: 600;
+}
+
+/* Membuat garis bawah menyala pada menu yang sedang aktif */
+.nav-links a.nav-active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #00bfff;
+    box-shadow: 0 0 10px #00bfff;
+    transition: width 0.3s ease;
+}
+
+/* Perbaikan Navigasi Mobile agar Muncul Sempurna */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        right: -100%; /* Sembunyi di kanan layar */
+        width: 70%;
+        height: calc(100vh - 70px);
+        background: rgba(5, 5, 5, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 50px;
+        gap: 30px;
+        transition: right 0.4s cubic-bezier(0.1, 1, 0.1, 1);
+        z-index: 999;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Ketika menu mobile aktif */
+    .nav-links.active {
+        right: 0 !important; /* Bergeser masuk ke layar */
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* Animasi Smooth Reveal untuk Section */
+
+
+/* Base background tubuh agar menyatu mulus dengan Canvas */
+body {
+    background-color: #030008 !important; /* Warna hitam ruang hampa */
+    min-height: 100vh;
+}
+
+/* Pastikan Canvas partikel berada di posisi paling belakang stabil */
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    pointer-events: none; /* Supaya klik mouse user tidak terhalang canvas */
+}
+
+/* Membuat card project & sertifikat sedikit transparan/glassmorphism agar efek nebula menembus ke dalam card */
+.project-card, .certificate-card {
+    background: rgba(255, 255, 255, 0.03) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: all 0.3s ease;
+}
+
+/* Efek menyala terang neon biru saat card di-hover */
+.project-card:hover, .certificate-card:hover {
+    border-color: rgba(0, 191, 255, 0.4);
+    box-shadow: 0 0 25px rgba(0, 191, 255, 0.2);
+    transform: translateY(-5px);
+}
+
+/* ============================================
+   CONTACT FORM — Tambahkan ke style.css
+   (tempel di bagian paling bawah file)
+   ============================================ */
+
+/* ---- Layout wrapper ---- */
+.contact-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 40px 0 36px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-divider::before,
+.contact-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 191, 255, 0.3), transparent);
+}
+
+.contact-divider span {
+    color: #64748b;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    letter-spacing: 1px;
+}
+
+/* ---- Form card ---- */
+.contact-form-wrap {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.contact-form-header {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.contact-form-header i {
+    font-size: 2.2rem;
+    color: #00bfff;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.contact-form-header h3 {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.contact-form-header p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+
+/* ---- Form grid ---- */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+.form-group label {
+    font-size: 0.88rem;
+    color: #94a3b8;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.form-group label i {
+    color: #00bfff;
+    margin-right: 6px;
+}
+
+.optional {
+    color: #475569;
+    font-size: 0.78rem;
+    margin-left: 4px;
+}
+
+/* ---- Inputs & Textarea ---- */
+.contact-form input,
+.contact-form textarea {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 14px 18px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+    resize: none;
+    width: 100%;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #475569;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #00bfff;
+    background: rgba(0, 191, 255, 0.05);
+    box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.1), 0 0 20px rgba(0, 191, 255, 0.08);
+}
+
+/* ---- Char counter ---- */
+.char-count {
+    position: absolute;
+    bottom: 10px;
+    right: 14px;
+    font-size: 0.75rem;
+    color: #475569;
+    pointer-events: none;
+}
+
+.char-count.warn {
+    color: #f59e0b;
+}
+
+/* ---- Topic pills ---- */
+.topic-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.pill {
+    padding: 8px 18px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+    color: #94a3b8;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.pill:hover {
+    border-color: rgba(0, 191, 255, 0.4);
+    color: #00bfff;
+    background: rgba(0, 191, 255, 0.06);
+}
+
+.pill.active {
+    border-color: #00bfff;
+    background: rgba(0, 191, 255, 0.12);
+    color: #00bfff;
+    box-shadow: 0 0 12px rgba(0, 191, 255, 0.2);
+    font-weight: 600;
+}
+
+/* ---- Star rating ---- */
+.star-rating {
+    display: flex;
+    gap: 6px;
+}
+
+.star {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+    transition: color 0.2s, transform 0.2s;
+    line-height: 1;
+    padding: 0 2px;
+}
+
+.star:hover,
+.star.active {
+    color: #fbbf24;
+    transform: scale(1.15);
+}
+
+/* ---- Send button ---- */
+.btn-send {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 36px;
+    background: linear-gradient(135deg, #00bfff, #0077cc);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.35s ease;
+    box-shadow: 0 4px 20px rgba(0, 191, 255, 0.3);
+    align-self: center;
+    min-width: 200px;
+}
+
+.btn-send:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 30px rgba(0, 191, 255, 0.5), 0 0 60px rgba(0, 191, 255, 0.2);
+}
+
+.btn-send:active {
+    transform: translateY(0);
+}
+
+.btn-send.loading span::after {
+    content: '...';
+    animation: dots 1s infinite;
+}
+
+@keyframes dots {
+    0%   { content: '.'; }
+    33%  { content: '..'; }
+    66%  { content: '...'; }
+}
+
+/* ---- Success message ---- */
+.form-success {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-top: 24px;
+    padding: 20px 24px;
+    background: rgba(0, 255, 150, 0.07);
+    border: 1px solid rgba(0, 255, 150, 0.2);
+    border-radius: 14px;
+    animation: fadeUp 0.5s ease;
+}
+
+.form-success.hidden {
+    display: none;
+}
+
+.form-success i {
+    font-size: 1.8rem;
+    color: #00e896;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.form-success strong {
+    display: block;
+    color: #00e896;
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.form-success p {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 600px) {
+    .contact-form-wrap {
+        padding: 28px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .topic-pills {
+        gap: 8px;
+    }
+
+    .pill {
+        padding: 7px 14px;
+        font-size: 0.8rem;
+    }
+}
+
+/* ============================================
+   ABOUT SECTION — REDESIGN
+   Tempel di paling bawah style.css
+   (hapus atau comment blok .about-wrapper
+    dan .about-card yang lama)
+   ============================================ */
+
+/* ---- Layout utama ---- */
+.about-layout {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* =====================
+   KOLOM KIRI — Foto
+   ===================== */
+
+.about-photo-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+/* Frame foto */
+.about-photo-frame {
+    position: relative;
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.about-photo-glow {
+    position: absolute;
+    inset: -20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,191,255,0.35) 0%, transparent 70%);
+    filter: blur(30px);
+    animation: aboutGlow 4s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+@keyframes aboutGlow {
+    from { opacity: 0.5; transform: scale(0.95); }
+    to   { opacity: 1;   transform: scale(1.05); }
+}
+
+.about-photo {
+    width: 300px;
+    height: 360px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 24px;
+    position: relative;
+    z-index: 1;
+    border: 2px solid rgba(0,191,255,0.25);
+    box-shadow:
+        0 0 0 6px rgba(0,191,255,0.06),
+        0 20px 60px rgba(0,0,0,0.5);
+    mix-blend-mode: lighten;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.08));
+}
+
+/* Badge melayang */
+.about-badge {
+    position: absolute;
+    z-index: 2;
+    background: rgba(2,6,23,0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0,191,255,0.2);
+    border-radius: 30px;
+    padding: 7px 16px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.78rem;
+    color: #e2e8f0;
+    white-space: nowrap;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.badge-top {
+    top: 18px;
+    right: -20px;
+    animation: badgeFloat 3s ease-in-out infinite;
+}
+
+.badge-top i { color: #fbbf24; }
+
+.badge-bottom {
+    bottom: 18px;
+    left: -20px;
+    animation: badgeFloat 3.5s ease-in-out infinite reverse;
+}
+
+.badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 8px #4ade80;
+    animation: statusPulse 2s infinite;
+    flex-shrink: 0;
+}
+
+@keyframes badgeFloat {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-7px); }
+}
+
+/* Stats row */
+.about-stats {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 16px 24px;
+    width: 100%;
+}
+
+.astat {
+    flex: 1;
+    text-align: center;
+}
+
+.astat strong {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #00bfff;
+    line-height: 1;
+}
+
+.astat span {
+    font-size: 0.72rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.astat-divider {
+    width: 1px;
+    height: 36px;
+    background: rgba(255,255,255,0.08);
+}
+
+/* =====================
+   KOLOM KANAN — Info
+   ===================== */
+
+.about-info-col {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+/* Bio */
+.about-bio {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.about-eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #00bfff;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.about-bio h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1.2;
+}
+
+.about-bio h3 span {
+    color: #00bfff;
+}
+
+.about-bio p {
+    color: #94a3b8;
+    line-height: 1.8;
+    font-size: 0.95rem;
+}
+
+.about-bio p strong {
+    color: #e2e8f0;
+}
+
+/* Info pills */
+.about-info-pills {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.info-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.info-pill i {
+    color: #00bfff;
+    width: 16px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* =====================
+   SKILL ICONS GRID
+   ===================== */
+
+.about-skills-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.skills-heading {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #00bfff;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0,191,255,0.15);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.skill-icons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
+
+/* Satu kartu skill */
+.skill-icon-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px;
+    padding: 16px 12px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: default;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-icon-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.skill-icon-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0,191,255,0.3);
+    box-shadow: 0 0 20px rgba(0,191,255,0.12);
+    background: rgba(0,191,255,0.05);
+}
+
+/* Ikon bulat */
+.sic-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+}
+
+/* Warna per bahasa */
+.html-color  { background: rgba(228,77,38,0.15);   color: #e44d26; }
+.css-color   { background: rgba(33,114,186,0.15);  color: #2196f3; }
+.js-color    { background: rgba(247,223,30,0.15);  color: #f7df1e; }
+.py-color    { background: rgba(55,118,171,0.15);  color: #3776ab; }
+.cpp-color   { background: rgba(0,89,156,0.18);    color: #00599c; }
+.java-color  { background: rgba(234,84,27,0.15);   color: #ea541b; }
+.mysql-color { background: rgba(0,117,143,0.18);   color: #00758f; }
+.tw-color    { background: rgba(6,182,212,0.15);   color: #06b6d4; }
+.bs-color    { background: rgba(121,82,179,0.15);  color: #7952b3; }
+.figma-color { background: rgba(242,78,30,0.12);   color: #f24e1e; }
+.git-color   { background: rgba(240,80,50,0.15);   color: #f05032; }
+.gh-color    { background: rgba(255,255,255,0.08); color: #e2e8f0; }
+
+.tw-text {
+    font-size: 0.95rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+/* Label */
+.skill-icon-card > span {
+    font-size: 0.75rem;
+    color: #cbd5e1;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Mini progress bar */
+.sic-bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.sic-fill {
+    height: 100%;
+    width: 0;                          /* start 0, JS animate ke --w */
+    border-radius: 10px;
+    background: linear-gradient(90deg, #00bfff, #00ffff);
+    box-shadow: 0 0 8px #00bfff;
+    transition: width 1.2s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+/* Persentase kecil */
+.skill-icon-card > small {
+    font-size: 0.68rem;
+    color: #475569;
+}
+
+/* =====================
+   RESPONSIVE
+   ===================== */
+
+@media (max-width: 1100px) {
+    .about-layout {
+        grid-template-columns: 320px 1fr;
+        gap: 40px;
+    }
+    .skill-icons-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 850px) {
+    .about-layout {
+        grid-template-columns: 1fr;
+    }
+    .about-photo-col {
+        align-items: center;
+    }
+    .about-photo-frame {
+        width: 260px;
+    }
+    .about-photo {
+        width: 260px;
+        height: 310px;
+    }
+    .about-stats {
+        width: 100%;
+        max-width: 320px;
+    }
+    .skill-icons-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .skill-icons-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .about-bio h3 {
+        font-size: 1.6rem;
+    }
+}
+
+/* ============================================
+   CERTIFICATE MODAL FIX CSS
+   Tempel di paling bawah style.css
+   (ini menimpa/override style modal yang lama)
+   ============================================ */
+
+/* ---- Overlay ---- */
+.certificate-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+    padding: 20px;
+    cursor: zoom-out;
+}
+
+.certificate-modal.active {
+    display: flex;
+    animation: modalFadeIn 0.25s ease;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* ---- Gambar ---- */
+.certificate-modal img {
+    max-width: min(90vw, 900px);
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    border-radius: 16px;
+    box-shadow:
+        0 0 0 1px rgba(0,191,255,0.2),
+        0 30px 80px rgba(0,0,0,0.7);
+    cursor: default;
+    animation: modalImgPop 0.3s cubic-bezier(0.34,1.56,0.64,1);
+    object-fit: contain;
+}
+
+@keyframes modalImgPop {
+    from { transform: scale(0.88); opacity: 0; }
+    to   { transform: scale(1);    opacity: 1; }
+}
+
+/* ---- Tombol tutup ---- */
+.close-modal {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 2.4rem;
+    color: rgba(255,255,255,0.7);
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.2s, transform 0.2s;
+    z-index: 10;
+    user-select: none;
+}
+
+.close-modal:hover {
+    color: #00bfff;
+    transform: rotate(90deg) scale(1.1);
+}
+
+/* ---- Tombol navigasi prev / next ---- */
+.nav-btn {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: white;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(6px);
+    z-index: 10;
+}
+
+.nav-btn:hover {
+    background: #00bfff;
+    border-color: #00bfff;
+    box-shadow: 0 0 20px rgba(0,191,255,0.5);
+    transform: translateY(-50%) scale(1.08);
+}
+
+.prev-btn { left: 20px; }
+.next-btn { right: 20px; }
+
+/* ---- Counter sertifikat (opsional info kecil) ---- */
+.cert-modal-info {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 1px;
+    pointer-events: none;
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 600px) {
+    .nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    .prev-btn { left: 8px; }
+    .next-btn { right: 8px; }
+    .close-modal {
+        top: 12px;
+        right: 16px;
+        font-size: 2rem;
+    }
+}
+/* ===================================
+   GARGANTUA BLACK HOLE EFFECT HELPERS
+=================================== */
+@keyframes gargantuaGlow {
+    0% {
+        filter: blur(2px) brightness(1) drop-shadow(0 0 20px #f59e0b);
+        transform: rotate(-5deg) scale(0.98);
+    }
+    100% {
+        filter: blur(3px) brightness(1.2) drop-shadow(0 0 35px #ff7b00);
+        transform: rotate(-5deg) scale(1.02);
+    }
+}
+
+@keyframes accretionPulse {
+    0% {
+        opacity: 0.85;
+        transform: rotate(-8deg) scaleY(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(-8deg) scaleY(1.05);
+    }
+}
+
+/* ===================================
+   TEXT SHIMMER COLOR WAVE (FIXED VERSION)
+=================================== */
+.text-shimmer {
+    background: linear-gradient(
+        90deg, 
+        #ffffff 0%, 
+        #ffffff 30%, 
+        #00bfff 45%, 
+        #8b5cf6 55%, 
+        #ffffff 70%, 
+        #ffffff 100%  
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; 
+    
+    animation: waveFlow 4s linear infinite;
+}
+
+@keyframes waveFlow {
+    0% {
+        background-position: 200% center;
+    }
+    100% {
+        background-position: -200% center;
+    }
+}
+/* ===================================
+   LOMBA / COMPETITION SECTION
+=================================== */
+
+.lomba-section {
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ——— Card wrapper ——— */
+.lomba-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 50px;
+    padding: 35px 35px 30px;
+    border-radius: 25px;
+    border: 1px solid rgba(0,191,255,.18);
+    background: rgba(255,255,255,.04);
+    backdrop-filter: blur(18px);
+    transition: .4s;
+}
+
+.lomba-card:hover {
+    box-shadow: 0 0 40px rgba(0,191,255,.25);
+    border-color: rgba(0,191,255,.4);
+}
+
+/* ——— Badge juara ——— */
+.lomba-badge {
+    position: absolute;
+    top: -16px;
+    left: 35px;
+    background: linear-gradient(135deg, #00bfff, #0070ff);
+    color: #fff;
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .05em;
+    padding: 5px 18px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,191,255,.4);
+}
+
+/* ——— Meta (teks info + tombol) ——— */
+.lomba-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.lomba-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #00bfff;
+}
+
+.lomba-title span {
+    color: #94a3b8;
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+.lomba-desc {
+    color: #cbd5e1;
+    line-height: 1.75;
+    font-size: .95rem;
+}
+
+/* ——— Link buttons ——— */
+.lomba-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.lomba-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-size: .88rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.btn-github {
+    background: rgba(255,255,255,.08);
+    color: #e2e8f0;
+    border: 1px solid rgba(255,255,255,.15);
+}
+
+.btn-github:hover {
+    background: rgba(255,255,255,.18);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(255,255,255,.1);
+}
+
+.btn-demo {
+    background: linear-gradient(135deg, #00bfff, #0070ff);
+    color: #fff;
+    border: none;
+}
+
+.btn-demo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,191,255,.45);
+}
+
+/* ——— Gallery row ——— */
+.lomba-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.gallery-label {
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    color: #00bfff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* ——— Sertifikat ——— */
+.lomba-cert-wrap {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: zoom-in;
+}
+
+.lomba-cert-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 14px;
+    transition: transform .4s;
+    border: 1px solid rgba(0,191,255,.2);
+}
+
+.lomba-cert-wrap:hover .lomba-cert-img {
+    transform: scale(1.04);
+}
+
+/* ——— Team grid ——— */
+.lomba-team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.lomba-team-wrap {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: zoom-in;
+    aspect-ratio: 1/1;
+}
+
+.lomba-team-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 12px;
+    transition: transform .4s;
+    border: 1px solid rgba(0,191,255,.15);
+}
+
+.lomba-team-wrap:hover .lomba-team-img {
+    transform: scale(1.08);
+}
+
+/* ——— Overlay zoom icon ——— */
+.lomba-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,191,255,.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: .3s;
+    font-size: 1.3rem;
+    color: #fff;
+}
+
+.lomba-cert-wrap:hover .lomba-img-overlay,
+.lomba-team-wrap:hover .lomba-img-overlay {
+    opacity: 1;
+}
+
+/* ——— Lightbox modal ——— */
+.lomba-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.88);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(6px);
+}
+
+.lomba-modal.open {
+    display: flex;
+}
+
+.lomba-modal img {
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 16px;
+    border: 2px solid rgba(0,191,255,.4);
+    box-shadow: 0 0 60px rgba(0,191,255,.3);
+}
+
+.lomba-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    line-height: 1;
+    transition: color .2s;
+}
+
+.lomba-modal-close:hover {
+    color: #00bfff;
+}
+
+/* ——— Responsive ——— */
+@media (max-width: 768px) {
+    .lomba-gallery {
+        grid-template-columns: 1fr;
+    }
+    .lomba-team-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .lomba-card {
+        padding: 28px 20px;
+    }
+}

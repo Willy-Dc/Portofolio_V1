@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+     <link rel="icon" type="image/x-icon" href="folder/logo web.webp">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Willi Iskandar Situmeang | Portfolio</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="background.css">
+</head>
+
+<body>
+
+    <!-- Space background layers -->
+<div class="nebula-layer"></div>
+<div class="nebula-mid"></div>
+<div class="aurora-line"></div>
+
+    <!-- ========================= -->
+    <!-- LOADING SCREEN -->
+    <!-- ========================= -->
+ <div id="loader">
+    <div class="space-scene">
+
+        <div class="loader-icons">
+            <div class="loader-icon-circle">
+                <i class="fa-solid fa-code"></i>
+            </div>
+            <div class="loader-icon-circle">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            <div class="loader-icon-circle">
+                <i class="fa-brands fa-github"></i>
+            </div>
+        </div>
+
+        <div class="loader-welcome">
+            <h1>Welcome To My</h1>
+            <h1 class="loader-welcome-gradient">Portfolio Website</h1>
+        </div>
+
+        <div class="loading-status">
+            <span id="load-percentage">0%</span>
+            <div class="progress-bar-bg">
+                <div class="progress-bar-fill"></div>
+            </div>
+            <h2>LOADING ...</h2>
+        </div>
+
+    </div>
+</div>
+    <!-- ========================= -->
+    <!-- NAVBAR -->
+    <!-- ========================= -->
+   
+    <nav id="navbar">
+        <div class="logo">
+            <h5 class="text-x">WilliDC</h5>
+            <h6 class="text-xs">Front-End Developer</h6>
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#certificate">Certificates</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#lomba">Competition</a>
+            </li>
+
+            <li>
+                <a href="#Contact">Contact</a>
+            </li>
+            
+
+        </ul>
+
+        <div class="menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </nav>
+
+    <!-- ========================= -->
+    <!-- HERO -->
+    <!-- ========================= -->
+
+    <section id="home">
+
+        <div class="hero-container">
+
+            <!-- LEFT -->
+
+            <div class="hero-left">
+              <h1 class="text-shimmer text-2xl md:text-4xl font-bold tracking-wide uppercase inline-block">
+    FRONT-END DEVELOPER
+</h1>
+
+                <div class="typing-container">
+                    <span id="typing-text"></span>
+                </div>
+
+                <p>
+                   Saya  Mahasiswa Informatika yang berfokus pada
+                    pengembangan website modern,
+                    UI/UX Design,
+                    dan teknologi digital. 
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#projects" class="btn-primary">
+                        Lihat Project
+                    </a>
+
+                    <a href="#Contact" class="btn-secondary">
+                        Contact Me
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- CENTER -->
+
+            <div class="hero-center">
+
+                <div class="image-glow"></div>
+
+                <img
+                    src="folder/Animation1.webp"
+                    alt="Willi Iskandar Situmeang"
+                    class="hero-image bg-top">
+
+            </div>
+
+        </div>
+
+    </section>
+<script>
+const SUPABASE_URL = 'https://pdaiopwqlbhfyioiodlo.supabase.co';      
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBkYWlvcHdxbGJoZnlpb2lvZGxvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE1MzU5NzgsImV4cCI6MjA5NzExMTk3OH0.DIZBL8fziclCTZAtc05NRntVN0Z2hvy558d4kZNAAwM';  
+const TABLE_NAME = 'pesan';               
+</script>
+   <!-- ========================= -->
+    <!-- ABOUT  (ganti section ini) -->
+    <!-- ========================= -->
+
+    <section id="about">
+
+        <div class="section-title">
+            <h1 class="text-shimmer text-3xl md:text-5xl font-bold tracking-wide uppercase inline-block">
+    ABOUT ME
+</h1>
+            <p>Mengenal lebih dekat tentang saya</p>
+        </div>
+
+        <div class="about-layout">
+
+            <!-- ===== KIRI : Foto ===== -->
+            <div class="about-photo-col reveal" data-anim="from-left">
+
+                <div class="about-photo-frame">
+                    <div class="about-photo-glow"></div>
+                    <img src="folder/willi.webp" alt="Willi Iskandar Situmeang" class="about-photo object-cover object-bottom">
+
+                    <!-- Badge melayang -->
+                    <div class="about-badge badge-top">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <span>S1 Informatika</span>
+                    </div>
+                    <div class="about-badge badge-bottom">
+                        <span class="badge-dot"></span>
+                    </div>
+                </div>
+
+                <!-- Stats kecil di bawah foto -->
+                <div class="about-stats">
+                    <div class="astat">
+                        <strong>3+</strong>
+                        <span>Projects</span>
+                    </div>
+                    <div class="astat-divider"></div>
+                    <div class="astat">
+                        <strong>5+</strong>
+                        <span>Sertifikat</span>
+                    </div>
+                    <div class="astat-divider"></div>
+                    <div class="astat">
+                        <strong>2025</strong>
+                        <span>Angkatan</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ===== KANAN : Info + Skills ===== -->
+            <div class="about-info-col reveal" data-anim="from-right">
+
+                <!-- Profil -->
+                <div class="about-bio">
+                    <span class="about-eyebrow">
+                        <i class="fa-solid fa-user-astronaut"></i> Siapa Saya?
+                    </span>
+                  <h1 class="text-shimmer text-2xl md:text-4xl font-bold tracking-wide uppercase inline-block">
+    Hello, I'm
+</h1>
+                  <h1 class="text-shimmer text-2xl md:text-4xl font-bold tracking-wide uppercase inline-block">
+    Willi Iskandar Situmeang
+</h1>
+                    <p>
+                        Seorang mahasiswa S1 Informatika Di Universitas Satya Terra Bhinneka Saya mempelajari Banyak Tentang
+                        <strong>Web Development</strong>, <strong>UI/UX Design</strong>,
+                        dan <strong>teknologi digital modern</strong>.
+                        Saya juga ingin berfokus membangun website responsif, interaktif dan Menarik untuk menciptakan
+                        pengalaman digital yang menyenangkan bagi pengguna. Dan selalu berusaha untuk terus belajar dan 
+                        berkembang dalam dunia teknologi yang terus berubah.  
+                    </p>
+
+                    <!-- Info pills -->
+                    <div class="about-info-pills">
+                        <div class="info-pill">
+                            <i class="fa-solid fa-id-card"></i>
+                            <span>NIM 2503311707</span>
+                        </div>
+                        <div class="info-pill">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span>Medan, Sumatera Utara</span>
+                        </div>
+                        <div class="info-pill">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>williiskandarsitumeang@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <!-- end info col -->
+
+        </div>
+
+        <!-- Tech Skills — full width di bawah card nametag -->
+        <div class="about-skills-block about-skills-fullwidth">
+            <h4 class="skills-heading">
+                <i class="fa-solid fa-code"></i> Tech Skills
+            </h4>
+            <div class="skill-icons-grid">
+
+                <div class="skill-icon-card">
+                    <div class="sic-icon html-color">
+                        <i class="devicon-html5-plain colored"></i>
+                    </div>
+                    <span>HTML5</span>
+                </div>
+
+                <div class="skill-icon-card">
+                    <div class="sic-icon css-color">
+                        <i class="devicon-css3-plain colored"></i>
+                    </div>
+                    <span>CSS3</span>
+                </div>
+
+                <div class="skill-icon-card">
+                    <div class="sic-icon js-color">
+                        <i class="devicon-javascript-plain colored"></i>
+                    </div>
+                    <span>JavaScript</span>
+                </div>
+
+                <div class="skill-icon-card">
+                    <div class="sic-icon py-color">
+                        <i class="devicon-python-plain colored"></i>
+                    </div>
+                    <span>Python</span>
+                </div>
+
+                <div class="skill-icon-card">
+                    <div class="sic-icon cpp-color">
+                        <i class="devicon-cplusplus-plain colored"></i>
+                    </div>
+                    <span>C++</span>
+                </div>
+
+                <div class="skill-icon-card">
+                    <div class="sic-icon java-color">
+                        <i class="devicon-java-plain colored"></i>
+                    </div>
+                    <span>Java</span>
+                </div>
+
+                <div class="skill-icon-card">
+                    <div class="sic-icon mysql-color">
+                        <i class="devicon-mysql-plain colored"></i>
+                    </div>
+                    <span>MySQL</span>
+                </div>
+
+                <div class="skill-icon-card">
+                    <div class="sic-icon tw-color">
+                        <i class="devicon-tailwindcss-plain colored"></i>
+                    </div>
+                    <span>Tailwind</span>
+                </div>
+
+                <div class="skill-icon-card">
+                    <div class="sic-icon bs-color">
+                        <i class="devicon-bootstrap-plain colored"></i>
+                    </div>
+                    <span>Bootstrap</span>
+                </div>
+
+                <div class="skill-icon-card">
+                    <div class="sic-icon git-color">
+                        <i class="devicon-git-plain colored"></i>
+                    </div>
+                    <span>Git</span>
+                </div>
+
+                <div class="skill-icon-card">
+                    <div class="sic-icon figma-color">
+                        <i class="devicon-figma-plain colored"></i>
+                    </div>
+                    <span>Figma</span>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- CERTIFICATES -->
+    <!-- ========================= -->
+    <section id="certificate" class="reveal py-20 px-6 md:px-20 max-w-6xl mx-auto" data-anim="from-bottom">
+        <div class="section-title text-center mb-12">
+       
+           <h1 class="text-shimmer text-3xl md:text-5xl font-bold tracking-wide uppercase inline-block">
+   My Certificates
+</h1>
+             <p>Sertifikat dan pelatihan yang telah saya ikuti</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="certificate-card bg-white/5 backdrop-blur-md p-4 rounded-xl border border-white/10 shadow-lg cursor-pointer overflow-hidden group h-80">
+                <img src="sertificate/Lomba Web Design.webp" alt="Sertifikat 1" class="w-full h-48 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300">
+                <p class="mt-3 text-center font-medium text-gray-200">Sertifikat Kompetensi 1</p>
+            </div>
+            <div class="certificate-card bg-white/5 backdrop-blur-md p-4 rounded-xl border border-white/10 shadow-lg cursor-pointer overflow-hidden group h-80">
+                <img src="sertificate/sertificate2.png" alt="Sertifikat 2" class="w-full h-48 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300">
+                <p class="mt-3 text-center font-medium text-gray-200">Sertifikat Kompetensi 2</p>
+            </div>
+            <div class="certificate-card bg-white/5 backdrop-blur-md p-4 rounded-xl border border-white/10 shadow-lg cursor-pointer overflow-hidden group h-80">
+                <img src="sertificate/sertificate3.webp" alt="Sertifikat 3" class="w-full h-48 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300">
+                <p class="mt-3 text-center font-medium text-gray-200">Sertifikat Kompetensi 3</p>
+            </div>
+        </div>
+        
+    </section>
+
+<!-- LIGHTBOX -->
+
+<div id="certificateModal" class="certificate-modal">
+
+    <span class="close-modal">&times;</span>
+
+    <button class="nav-btn prev-btn">
+        ❮
+    </button>
+
+    <img id="modalImage" src="" alt="Certificate">
+
+    <button class="nav-btn next-btn">
+        ❯
+    </button>
+
+</div>
+
+    <!-- ========================= -->
+    <!-- PROJECTS -->
+    <!-- ========================= -->
+
+    <section id="projects" class="mt-20">
+
+        <div class="planet1"></div>
+        <div class="planet2"></div>
+
+        <div class="section-title">
+            <h1 class="text-shimmer text-3xl md:text-5xl font-bold tracking-wide uppercase inline-block">
+   PROJECTS
+</h1>
+            <p>Beberapa project yang telah saya kerjakan</p>
+        </div>
+
+        <div class="project-grid">
+
+            <!-- Orangutan Haven -->
+
+            <div class="project-card tilt-card">
+
+                <img src="project/project ouh.webp" alt="Orangutan Haven">
+
+                <div class="project-content">
+
+                    <h3>Orangutan Haven</h3>
+
+                    <p>
+                        Orangutan Haven bukan sekadar tempat perlindungan,
+                        melainkan simbol harapan baru bagi mereka yang tidak
+                        bisa kembali ke alam liar.
+                    </p>
+
+                    <a target="_blank"
+                        href="https://willy-dc.github.io/Project-Website-BukuTamu_OrangUtan/">
+                        Demo Project
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Mental Health -->
+
+            <div class="project-card tilt-card">
+
+                <img src="project/project Mental Healt.webp" alt="Mental Health Website">
+
+                <div class="project-content">
+
+                    <h3>Mental Health Website</h3>
+
+                    <p>
+                        Platform digital untuk membantu pengguna
+                        menjaga kesehatan mental melalui edukasi
+                        dan fitur interaktif.
+                    </p>
+
+                    <a target="_blank"
+                        href="https://willy-dc.github.io/Edukasi-Mental-Healt/">
+                        Demo Project
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- UI UX -->
+
+            <div class="project-card tilt-card">
+
+                 <img src="project/project UIUX.webp" alt="UI/UX Figma">
+
+                <div class="project-content">
+
+                    <h3>UI/UX Figma</h3>
+
+                    <p>
+                        Desain Buku Tamu Digital Orangutan Haven
+                        yang berfokus pada pengalaman pengguna
+                        yang cepat dan inklusif.
+                    </p>
+
+                    <a target="_blank"
+                        href="https://www.figma.com/design/LwxZjfknFT5swmkCEguqIQ/Untitled">
+                        View Figma
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+   
+    </section>
+     <div class="shooting-star"></div>
+    <div class="shooting-star shooting2"></div>
+    <div class="shooting-star shooting3"></div>
+
+    <!-- ========================= -->
+    <!-- LOMBA / COMPETITION      -->
+    <!-- ========================= -->
+
+    <section id="lomba" class="lomba-section reveal" data-anim="from-bottom">
+
+        <div class="section-title">
+            <h1 class="text-shimmer text-3xl md:text-5xl font-bold tracking-wide uppercase inline-block">
+   COMPETITION
+</h1>
+            <p>Pengalaman lomba dan pencapaian tim saya</p>
+        </div>
+
+        <!-- LOMBA CARD 1 — ganti data sesuai lombamu -->
+        <div class="lomba-card glass-card reveal" data-anim="scale-up">
+
+            <!-- ——— Badge juara (hapus jika tidak ada) ——— -->
+            <div class="lomba-badge">🥇 Juara 2</div>
+
+            <!-- ——— Info lomba ——— -->
+            <div class="lomba-meta">
+                <h3 class="lomba-title">Web Design Competition <span>2026</span></h3>
+                <p class="lomba-desc">
+                    Lomba web design tingkat nasional yang diselenggarakan pada tanggal 12 Mei 2026 Di <strong>Universitas Nurtanio Bandung</strong>
+                    Tim kami membangun website bertema <strong>MENTAL HEALTH</strong> dengan tampilan modern dan
+                    pengalaman pengguna yang intuitif.
+                </p>
+                <div class="lomba-links">
+                    <a href="https://github.com/Willy-Dc/" target="_blank" class="lomba-btn btn-github">
+                        <i class="fab fa-github"></i> GitHub Repo
+                    </a>
+                    <a href=" https://willy-dc.github.io/Edukasi-Mental-Healt/" target="_blank" class="lomba-btn btn-demo">
+                        <i class="fa-solid fa-rocket"></i> Live Demo
+                    </a>
+                </div>
+            </div>
+
+            <!-- ——— Foto Sertifikat ——— -->
+            <div class="lomba-gallery">
+
+                <div class="lomba-gallery-col">
+                    <p class="gallery-label"><i class="fa-solid fa-certificate"></i> Sertifikat Lomba</p>
+                    <div class="lomba-cert-wrap" onclick="openLombaModal(this)">
+                        <img src="sertificate/Lomba Web Design.webp" alt="Sertifikat Lomba Web Design" class="lomba-cert-img">
+                        <div class="lomba-img-overlay"><i class="fa-solid fa-expand"></i></div>
+                    </div>
+                </div>
+
+                <div class="lomba-gallery-col">
+                    <p class="gallery-label"><i class="fa-solid fa-users"></i> Foto Tim</p>
+                    <div class="lomba-team-grid">
+                        <!-- Foto tim bersama -->
+                        <div class="lomba-team-wrap" onclick="openLombaModal(this)">
+                            <img src="folder/Team Hangker.webp" alt="Tim Hangker" class="lomba-team-img">
+                            <div class="lomba-img-overlay"><i class="fa-solid fa-expand"></i></div>
+                        </div>
+                        <!-- Slot foto anggota lain — ganti src jika ada -->
+                        <div class="lomba-team-wrap" onclick="openLombaModal(this)">
+                            <img src="folder/TIM.webp" alt="Foto Tim" class="lomba-team-img">
+                            <div class="lomba-img-overlay"><i class="fa-solid fa-expand"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- end gallery -->
+
+        </div>
+        <!-- end lomba-card -->
+
+        <!-- ——— Tambah lomba lain di sini, copy .lomba-card di atas ——— -->
+
+    </section>
+
+    <!-- LOMBA LIGHTBOX -->
+    <div id="lombaModal" class="lomba-modal" onclick="closeLombaModal()">
+        <span class="lomba-modal-close" onclick="closeLombaModal()">&times;</span>
+        <img id="lombaModalImg" src="" alt="Preview">
+    </div>
+
+    <!-- ========================= -->
+    <!-- CONTACT -->
+    <!-- ========================= -->
+
+    <section id="Contact" class="-mt-48">
+
+<!-- ========================= -->
+<!-- CONTACT (GANTI SECTION INI DI index.html) -->
+<!-- ========================= -->
+
+<section id="Contact">
+
+    <div class="section-title">
+         <h1 class="text-shimmer text-3xl md:text-5xl font-bold tracking-wide uppercase inline-block">
+   CONTACT ME
+</h1>
+        <p>Mari terhubung — atau tinggalkan pesan & masukan untuk saya</p>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="contact-icons">
+        <a href="https://wa.me/qr/YUCI3DQU6Y5OI1" title="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.instagram.com/willylskndr" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://github.com/Willy-Dc" title="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/willi-iskandar-situmeang-aa4833355" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:williiskandarsitumeang@gmail.com" title="Email">
+            <i class="fa-solid fa-envelope"></i>
+        </a>
+    </div>
+
+    <!-- Divider -->
+    <div class="contact-divider">
+        <span>atau kirim pesan langsung</span>
+    </div>
+
+    <!-- Feedback Form -->
+    <div class="contact-form-wrap glass-card reveal" data-anim="from-bottom">
+
+        <div class="contact-form-header">
+            <i class="fa-solid fa-paper-plane"></i>
+            <h3>Kirim Pesan / Masukan</h3>
+            <p>Feedback, kolaborasi, atau sekedar sapa — semua disambut! 👋</p>
+        </div>
+
+        <div class="contact-form">
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="contact-name">
+                        <i class="fa-solid fa-user"></i> Nama
+                    </label>
+                    <input
+                        type="text"
+                        id="contact-name"
+                        placeholder="Nama kamu..."
+                        autocomplete="off"
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">
+                        <i class="fa-solid fa-envelope"></i> Email <span class="optional">(opsional)</span>
+                    </label>
+                    <input
+                        type="email"
+                        id="contact-email"
+                        placeholder="email@kamu.com"
+                        autocomplete="off"
+                    >
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="contact-subject">
+                    <i class="fa-solid fa-tag"></i> Topik
+                </label>
+                <div class="topic-pills">
+                    <button type="button" class="pill active" data-value="Feedback">💬 Feedback</button>
+                    <button type="button" class="pill" data-value="Kolaborasi">🤝 Kolaborasi</button>
+                    <button type="button" class="pill" data-value="Pertanyaan">❓ Pertanyaan</button>
+                    <button type="button" class="pill" data-value="Lainnya">✨ Lainnya</button>
+                </div>
+                <input type="hidden" id="contact-subject" value="Feedback">
+            </div>
+
+            <div class="form-group">
+                <label for="contact-message">
+                    <i class="fa-solid fa-message"></i> Pesan
+                </label>
+                <textarea
+                    id="contact-message"
+                    rows="5"
+                    placeholder="Tulis pesan atau masukanmu di sini..."
+                ></textarea>
+                <span class="char-count">0 / 500</span>
+            </div>
+
+            <!-- Rating -->
+            <div class="form-group">
+                <label>
+                    <i class="fa-solid fa-star"></i> Rating Portfolio <span class="optional">(opsional)</span>
+                </label>
+                <div class="star-rating">
+                    <button type="button" class="star" data-val="1">★</button>
+                    <button type="button" class="star" data-val="2">★</button>
+                    <button type="button" class="star" data-val="3">★</button>
+                    <button type="button" class="star" data-val="4">★</button>
+                    <button type="button" class="star" data-val="5">★</button>
+                </div>
+            </div>
+
+            <button type="button" id="send-btn" class="btn-send">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Kirim Pesan</span>
+            </button>
+
+        </div>
+
+        <!-- Success Toast -->
+        <div id="form-success" class="form-success hidden">
+            <i class="fa-solid fa-circle-check"></i>
+            <div>
+                <strong>Pesan terkirim!</strong>
+                <p>Terima kasih sudah menghubungi saya. Saya akan membalasnya segera. 🚀</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+    </section>
+
+    <!-- ========================= -->
+    <!-- FOOTER -->
+    <!-- ========================= -->
+
+    <footer>
+        <p>
+            © 2026 Willi Iskandar Situmeang , Sumatera Utara - Medan
+        </p>
+
+    </footer>
+
+    <!-- JS -->
+
+    <script src="scroll-anim.js"></script>
+    <script src="main.js"></script>
+    <script src="typing.js"></script>
+    
+
+    <!-- Lomba Lightbox -->
+    <script>
+        function openLombaModal(el) {
+            const img = el.querySelector('img');
+            document.getElementById('lombaModalImg').src = img.src;
+            document.getElementById('lombaModal').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLombaModal() {
+            document.getElementById('lombaModal').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeLombaModal();
+        });
+    </script>
+
+</body>
+</html>
