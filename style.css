@@ -473,6 +473,65 @@ body::after{
     color:white;
 }
 
+/* HERO TECH TAGS */
+.hero-tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.hero-tag {
+    padding: 6px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+    color: #cbd5e1;
+    font-size: 0.82rem;
+    font-weight: 500;
+    backdrop-filter: blur(6px);
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.hero-tag:hover {
+    border-color: rgba(0, 191, 255, 0.5);
+    background: rgba(0, 191, 255, 0.08);
+    color: #00bfff;
+    box-shadow: 0 0 12px rgba(0, 191, 255, 0.15);
+}
+
+/* HERO SOCIAL ICONS */
+.hero-socials {
+    display: flex;
+    gap: 14px;
+    margin-top: 22px;
+}
+
+.hero-social-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.05);
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(6px);
+}
+
+.hero-social-btn:hover {
+    border-color: rgba(0, 191, 255, 0.4);
+    color: #00bfff;
+    transform: translateY(-3px);
+    box-shadow: 0 0 0 1px rgba(0,191,255,0.15),
+                0 8px 24px rgba(0,191,255,0.12);
+}
+
 /* ===================================
    HERO IMAGE
 =================================== */
@@ -823,6 +882,82 @@ section{
     width: 16px;
     text-align: center;
     flex-shrink: 0;
+}
+
+/* ABOUT QUOTE */
+.about-quote {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin-top: 20px;
+}
+
+.about-quote i {
+    color: #7c3aed;
+    font-size: 1.3rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.about-quote p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ABOUT CTA BUTTONS */
+.about-cta-buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
+.btn-download-cv {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #7c3aed, #9333ea);
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
+}
+
+.btn-download-cv:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(124, 58, 237, 0.5);
+}
+
+.btn-view-projects {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 10px;
+    border: 1.5px solid #7c3aed;
+    color: #a78bfa;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.btn-view-projects:hover {
+    background: rgba(124, 58, 237, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 16px rgba(124, 58, 237, 0.2);
 }
 
 /* =====================
